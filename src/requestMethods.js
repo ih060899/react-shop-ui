@@ -1,8 +1,8 @@
 import axios from 'axios';
 
-const BASE_URL = 'http://localhost:5000/api/';
-const TOKEN =
-    'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxNjJmYjA1YzZjOWI4YjdkZGM3Y2EzZiIsImlzQWRtaW4iOnRydWUsImlhdCI6MTYzNDEyOTQzMCwiZXhwIjoxNjM0Mzg4NjMwfQ.w0G2kY4ST7fszu000McXxjtbb_rTcbKx4dac9pVvVbc';
+const BASE_URL = 'https://ih-shop-api.herokuapp.com/api/';
+const TOKEN = JSON.parse(JSON.parse(localStorage.getItem('persist:root')).user)
+    .currentUser.accessToken;
 
 export const publicRequest = axios.create({
     baseURL: BASE_URL,
